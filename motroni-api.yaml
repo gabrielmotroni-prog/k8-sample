@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: motroni-api
+  labels:
+    app: motroni-api
+spec:
+  containers:
+    - name: motroni-api
+      image: gabriesmotroni/k8-nodejs:v2
+      ports:
+        - containerPort: 3000
+      env:
+        - name: NOME_ENV
+          valueFrom:
+            configMapKeyRef:
+              name: db-config
+              key: NOME_ENV
