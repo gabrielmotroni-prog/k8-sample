@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: db-config # oq faz o link
-data:
-  NOME_ENV: "env do k8"
